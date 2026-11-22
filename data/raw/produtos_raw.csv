@@ -1,0 +1,35 @@
+produto_id,nome_produto,categoria,marca,preco_unitario,custo_unitario
+PRD-001,Smartphone Galaxy A55 256GB,  Eletrônicos ,Samsung,2199.90,1480.00
+PRD-002,"Smart TV 55"" 4K UHD",ELETRONICOS,LG,2799.00,1920.00
+PRD-003,Fone Bluetooth ANC Pro,ELETRO,Sony,649.90,"390,00"
+PRD-004,Caixa de Som Portátil 40W,eletronicos,JBL,499.90,295.00
+PRD-005,Smartwatch Fit GPS,Eletrônicos,Garmin,1299.00,820.00
+PRD-006,  Kindle Paperwhite 16GB ,Eletrônicos,Amazon,  799.00  ,510.00
+PRD-007,Notebook Core i7 16GB 512GB,Informática,Dell,4499.00,3250.00
+PRD-008,"  Monitor Ultrawide 29"" IPS ",tech,LG,  1399.00  ,"R$ 910,00"
+PRD-009,Teclado Mecânico RGB Switch Brown,TI,Logitech,429.90,  240.00  
+PRD-010,Mouse Ergonomico Wireless,Informática,Logitech,"R$ 349,90","R$ 195,00"
+PRD-011,SSD NVMe 1TB Gen4,TI,Kingston,"479,00",290.00
+PRD-012,Webcam Full HD 1080p,informatica,Logitech,289.90,"R$ 165,00"
+PRD-013,Cafeteira Espresso Automática,Casa & Decoração,Nespresso,"899,90",  540.00  
+PRD-014,Aspirador Robô Smart Wi-Fi,Casa e Decoração,WAP,1199.00,740.00
+PRD-015,Air Fryer Digital 5.5L,Casa & Decoração,Philips Walita,589.90,355.00
+PRD-016,Jogo de Panelas Antiaderente 7pç,Casa & Decoração,Tramontina,449.00,"R$ 260,00"
+PRD-017,Luminária de Mesa LED Minimalista,Casa & Decoração,Philips,189.90,95.00
+PRD-018,Conjunto Lençol 400 Fios Queen,Casa e Decoracao,Buddemeyer,"R$ 379,90","R$ 210,00"
+PRD-019,  Tênis Running Amortecimento Pro ,Moda & Acessórios,Nike,599.90,310.00
+PRD-020,Jaqueta Corta-Vento Impermeável,Moda & Acessórios,Adidas,349.90,  175.00  
+PRD-021,Mochila Executiva Anti-Furto,MODA,Samsonite,"R$ 419,90","R$ 220,00"
+PRD-022,Óculos de Sol Polarizado Classic,moda,Ray-Ban,689.00,"350,00"
+PRD-023,Relógio Analógico Couro Minimal,Moda & Acessórios,Fossil,549.00,285.00
+PRD-024,Bicicleta Mountain Bike Aro 29,ESPORTES,Caloi,"R$ 1.899,00",1260.00
+PRD-025,Kit Halteres Ajustáveis 20kg,esportes,Polimet,  329.90  ,"R$ 185,00"
+PRD-026,Tapete de Yoga Antiderrapante 8mm,Esportes e Lazer,Acte,"R$ 139,90",68.00
+PRD-027,Barraca Camping 4 Pessoas Impermeável,Esportes & Lazer,Nautika,"489,90",275.00
+PRD-028,Garrafa Térmica Inox 1L,esportes,Stanley,"249,90",130.00
+PRD-029,Perfume Eau de Parfum 100ml,Beleza & Saúde,Natura,"R$ 299,90",  145.00  
+PRD-030,Secador de Cabelo Profissional 2200W,Beleza & Saúde,Taiff,359.90,195.00
+PRD-031,Kit Skincare Vitamina C + Ácido Hialurônico,Beleza & Saúde,La Roche-Posay,  279.90  ,"142,00"
+PRD-032,  Escova Dental Elétrica Sônica ,  BELEZA ,Oral-B,"229,90",118.00
+PRD-001,Smartphone Galaxy A55 256GB,  Eletrônicos ,Samsung,2199.90,1480.00
+PRD-006,  Kindle Paperwhite 16GB ,Eletrônicos,Amazon,  799.00  ,510.00

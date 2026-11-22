@@ -1,0 +1,13 @@
+﻿loja_id,nome_loja,cidade,estado,nome_estado,regiao,canal_padrao
+LJ-01,RetailPulse Paulista,São Paulo,SP,São Paulo,Sudeste,Loja Física
+LJ-02,RetailPulse Barra,Rio de Janeiro,RJ,Rio de Janeiro,Sudeste,Loja Física
+LJ-03,RetailPulse Savassi,Belo Horizonte,MG,Minas Gerais,Sudeste,Loja Física
+LJ-04,RetailPulse Batel,Curitiba,PR,Paraná,Sul,Loja Física
+LJ-05,RetailPulse Moinhos,Porto Alegre,RS,Rio Grande do Sul,Sul,Loja Física
+LJ-06,RetailPulse Salvador Shopping,Salvador,BA,Bahia,Nordeste,Loja Física
+LJ-07,RetailPulse Boa Viagem,Recife,PE,Pernambuco,Nordeste,Loja Física
+LJ-08,RetailPulse ParkShopping,Brasília,DF,Distrito Federal,Centro-Oeste,Loja Física
+LJ-09,RetailPulse Manauara,Manaus,AM,Amazonas,Norte,Loja Física
+LJ-10,RetailPulse E-commerce Nacional,São Paulo,SP,São Paulo,Sudeste,E-commerce
+LJ-11,RetailPulse App Mobile,São Paulo,SP,São Paulo,Sudeste,App Mobile
+LJ-12,RetailPulse Marketplace Hub,Campinas,SP,São Paulo,Sudeste,Marketplace

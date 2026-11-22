@@ -1,0 +1,8 @@
+# RetailPulse — Pipeline ETL & BI Analítico
+#
+# Este projeto foi construído intencionalmente usando apenas a biblioteca padrão
+# do Python 3.12+ (csv, sqlite3, json, datetime, pathlib, unittest, logging),
+# garantindo zero fricção de dependências para execução imediata em qualquer máquina.
+#
+# Dependências opcionais para desenvolvimento / testes alternativos:
+# pytest>=8.0.0

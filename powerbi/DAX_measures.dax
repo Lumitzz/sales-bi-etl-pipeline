@@ -1,0 +1,114 @@
+// ============================================================================
+// RetailPulse — Medidas DAX para Power BI Desktop
+// Modelo: Star Schema (fato_vendas + dim_clientes, dim_produtos, dim_lojas, dim_tempo)
+// Relacionamentos recomendados (1:N):
+//   dim_tempo[tempo_id]       -> fato_vendas[tempo_id]
+//   dim_clientes[cliente_id]  -> fato_vendas[cliente_id]
+//   dim_produtos[produto_id]  -> fato_vendas[produto_id]
+//   dim_lojas[loja_id]        -> fato_vendas[loja_id]
+// Dica: Marque `dim_tempo` como Tabela de Datas usando a coluna `dim_tempo[data]`.
+// ============================================================================
+
+// 1. Receita Total (Líquida de Descontos)
+Receita Total =
+SUM ( fato_vendas[receita_liquida] )
+
+// 2. Lucro Bruto Total
+Lucro Bruto =
+SUM ( fato_vendas[lucro_bruto] )
+
+// 3. Margem Bruta %
+Margem Bruta % =
+DIVIDE (
+    [Lucro Bruto],
+    [Receita Total],
+    0
+)
+
+// 4. Total de Pedidos
+Total de Pedidos =
+DISTINCTCOUNT ( fato_vendas[venda_id] )
+
+// 5. Ticket Médio por Pedido
+Ticket Médio =
+DIVIDE (
+    [Receita Total],
+    [Total de Pedidos],
+    0
+)
+
+// 6. Receita do Mês Anterior (Time Intelligence)
+Receita Mês Anterior =
+CALCULATE (
+    [Receita Total],
+    DATEADD ( dim_tempo[data], -1, MONTH )
+)
+
+// 7. Crescimento MoM % (Month-over-Month)
+Crescimento MoM % =
+VAR ReceitaAtual = [Receita Total]
+VAR ReceitaAnterior = [Receita Mês Anterior]
+RETURN
+    IF (
+        NOT ISBLANK ( ReceitaAnterior ),
+        DIVIDE ( ReceitaAtual - ReceitaAnterior, ReceitaAnterior, 0 ),
+        BLANK ()
+    )
+
+// 8. Receita Ano Anterior & Crescimento YoY % (Year-over-Year)
+Receita Ano Anterior =
+CALCULATE (
+    [Receita Total],
+    SAMEPERIODLASTYEAR ( dim_tempo[data] )
+)
+
+Crescimento YoY % =
+VAR ReceitaAtual = [Receita Total]
+VAR ReceitaLY = [Receita Ano Anterior]
+RETURN
+    IF (
+        NOT ISBLANK ( ReceitaLY ),
+        DIVIDE ( ReceitaAtual - ReceitaLY, ReceitaLY, 0 ),
+        BLANK ()
+    )
+
+// 9. Participação % da Categoria no Total Geral
+Participação % Categoria =
+DIVIDE (
+    [Receita Total],
+    CALCULATE (
+        [Receita Total],
+        ALL ( dim_produtos[categoria] )
+    ),
+    0
+)
+
+// 10. Top Clientes (Receita Concentrada nos Top 10 Clientes)
+Top Clientes =
+CALCULATE (
+    [Receita Total],
+    TOPN (
+        10,
+        ALLSELECTED ( dim_clientes[cliente_id] ),
+        [Receita Total],
+        DESC
+    )
+)
+
+// 11. Participação % dos Top 10 Clientes na Receita Total
+Participação Top 10 Clientes % =
+DIVIDE (
+    [Top Clientes],
+    [Receita Total],
+    0
+)
+
+// 12. Ranking Dinâmico de Clientes por Receita
+Ranking Cliente =
+RANKX (
+    ALLSELECTED ( dim_clientes[nome] ),
+    [Receita Total],
+    ,
+    DESC,
+    DENSE
+)

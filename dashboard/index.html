@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RetailPulse — Dashboard Analítico & Qualidade ETL</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script src="./dashboard_data.js"></script>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface-2: #1e293b;
+      --border: #263248;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-2: #818cf8;
+      --green: #34d399;
+      --amber: #fbbf24;
+      --rose: #fb7185;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, sans-serif;
+      background: radial-gradient(circle at top right, #172554 0%, var(--bg) 42%);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1380px;
+      margin: 0 auto;
+      padding: 28px 24px 56px;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 28px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .brand h1 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(90deg, #38bdf8, #818cf8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .brand p {
+      color: var(--muted);
+      font-size: 0.92rem;
+      margin-top: 4px;
+    }
+
+    .header-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      background: rgba(56, 189, 248, 0.12);
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      color: var(--accent);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .badge.green {
+      background: rgba(52, 211, 153, 0.12);
+      border-color: rgba(52, 211, 153, 0.35);
+      color: var(--green);
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(205px, 1fr));
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .kpi-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    }
+
+    .kpi-label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    .kpi-value {
+      font-size: 1.65rem;
+      font-weight: 700;
+      margin: 6px 0 4px;
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .kpi-sub.positive { color: var(--green); }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .grid-full {
+      margin-bottom: 20px;
+    }
+
+    @media (max-width: 960px) {
+      .grid-2 { grid-template-columns: 1fr; }
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px 22px;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .card-title {
+      font-size: 1.05rem;
+      font-weight: 600;
+    }
+
+    .card-subtitle {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .filter-group {
+      display: flex;
+      gap: 6px;
+    }
+
+    .filter-btn {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 5px 12px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .filter-btn.active, .filter-btn:hover {
+      background: rgba(56, 189, 248, 0.16);
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .chart-box {
+      position: relative;
+      height: 310px;
+      width: 100%;
+    }
+
+    .chart-box.tall { height: 340px; }
+
+    .pill-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .abc-pill {
+      flex: 1;
+      min-width: 140px;
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+
+    .abc-pill strong { font-size: 0.9rem; }
+    .abc-pill span { display: block; font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.85rem;
+    }
+
+    th, td {
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+
+    th {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    tr:last-child td { border-bottom: none; }
+    td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .tag-a { background: rgba(52, 211, 153, 0.16); color: var(--green); }
+    .tag-b { background: rgba(251, 191, 36, 0.16); color: var(--amber); }
+    .tag-c { background: rgba(251, 113, 133, 0.16); color: var(--rose); }
+
+    .dq-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 12px;
+    }
+
+    .dq-item {
+      background: var(--surface-2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .dq-item .label { font-size: 0.82rem; color: var(--muted); }
+    .dq-item .val { font-size: 1.05rem; font-weight: 700; color: var(--accent); }
+
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.8rem;
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    .error-banner {
+      background: rgba(251, 113, 133, 0.12);
+      border: 1px solid var(--rose);
+      color: var(--rose);
+      padding: 16px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <h1>RetailPulse Analytics</h1>
+        <p>Pipeline ETL em Python • Modelagem Star Schema SQLite • Power BI Ready</p>
+      </div>
+      <div class="header-meta">
+        <span class="badge" id="meta-warehouse">Star Schema DW</span>
+        <span class="badge green" id="meta-updated">Atualizado agora</span>
+      </div>
+    </header>
+
+    <div id="error-banner" class="error-banner"></div>
+
+    <!-- KPI Cards -->
+    <section class="kpi-grid" id="kpi-grid"></section>
+
+    <!-- Monthly Revenue & MoM -->
+    <section class="card grid-full">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Evolução Mensal de Receita &amp; Crescimento MoM %</div>
+          <div class="card-subtitle">Receita líquida mensal (barras) e variação percentual mês contra mês (linha)</div>
+        </div>
+        <div class="filter-group" id="year-filters">
+          <button class="filter-btn active" data-year="all">Todos</button>
+          <button class="filter-btn" data-year="2024">2024</button>
+          <button class="filter-btn" data-year="2025">2025</button>
+        </div>
+      </div>
+      <div class="chart-box tall">
+        <canvas id="monthlyChart"></canvas>
+      </div>
+    </section>
+
+    <!-- Categories & Regions -->
+    <section class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Top Categorias por Receita</div>
+            <div class="card-subtitle">Receita líquida e lucro bruto por categoria padronizada</div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <canvas id="categoryChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Performance por Região do Brasil</div>
+            <div class="card-subtitle">Distribuição geográfica de receita e pedidos válidos</div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <canvas id="regionChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABC Curve (Pareto) -->
+    <section class="card grid-full">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Curva ABC de Produtos (Análise de Pareto)</div>
+          <div class="card-subtitle">Top 15 produtos por receita líquida e percentual acumulado</div>
+        </div>
+      </div>
+      <div class="pill-row" id="abc-pills"></div>
+      <div class="chart-box tall">
+        <canvas id="abcChart"></canvas>
+      </div>
+    </section>
+
+    <!-- RFM & Top Customers -->
+    <section class="grid-2">
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Segmentação RFM de Clientes</div>
+            <div class="card-subtitle">Receita total por segmento (Recência, Frequência e Valor Monetário)</div>
+          </div>
+        </div>
+        <div class="chart-box">
+          <canvas id="rfmChart"></canvas>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <div>
+            <div class="card-title">Top 10 Clientes por Receita</div>
+            <div class="card-subtitle">Ranking SQL via Window Function (RANK OVER)</div>
+          </div>
+        </div>
+        <div style="overflow-x: auto;">
+          <table id="top-customers-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Cliente</th>
+                <th>UF</th>
+                <th>Segmento</th>
+                <th class="num">Pedidos</th>
+                <th class="num">Receita</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ETL Data Quality Report -->
+    <section class="card grid-full">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Relatório de Qualidade de Dados do ETL</div>
+          <div class="card-subtitle">Auditoria automatizada de limpeza, padronização, deduplicação e integridade referencial</div>
+        </div>
+        <span class="badge green" id="dq-acceptance-badge">Aproveitamento: --</span>
+      </div>
+      <div style="overflow-x: auto; margin-bottom: 14px;">
+        <table id="dq-tables">
+          <thead>
+            <tr>
+              <th>Tabela Star Schema</th>
+              <th class="num">Registros Raw</th>
+              <th class="num">Registros Limpos</th>
+              <th class="num">Diferença / Removidos</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="dq-grid" id="dq-issues-grid"></div>
+    </section>
+
+    <footer>
+      RetailPulse BI Pipeline • Desenvolvido por Carlos Emanuel • Python 3.12 + SQLite Star Schema + DAX / Power BI
+    </footer>
+  </div>
+
+  <script>
+    const fmtBRL = (v) =>
+      new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL" }).format(v || 0);
+    const fmtNum = (v) => new Intl.NumberFormat("pt-BR").format(v || 0);
+    const fmtPct = (v) => (v === null || v === undefined ? "—" : `${Number(v).toFixed(2)}%`);
+
+    const ISSUE_LABELS = {
+      duplicatas_removidas: "Duplicatas Removidas",
+      datas_padronizadas: "Datas Padronizadas (ISO)",
+      datas_invalidas_rejeitadas: "Datas Inválidas Rejeitadas",
+      valores_monetarios_padronizados: "Valores Monetários Corrigidos",
+      estados_padronizados: "Estados (UF) Padronizados",
+      categorias_padronizadas: "Categorias Padronizadas",
+      espacos_e_caixa_corrigidos: "Espaços & Caixa Corrigidos",
+      emails_ausentes_preenchidos: "E-mails Ausentes Tratados",
+      descontos_ausentes_zerados: "Descontos Nulos Zerados",
+      quantidades_invalidas_rejeitadas: "Quantidades ≤ 0 Rejeitadas",
+      precos_invalidos_rejeitados: "Preços Inválidos Rejeitados",
+      chaves_estrangeiras_invalidas_rejeitadas: "FKs Órfãs/Nulas Rejeitadas",
+    };
+
+    let monthlyChartInstance = null;
+
+    async function loadDashboardData() {
+      if (window.RETAILPULSE_DATA) {
+        return window.RETAILPULSE_DATA;
+      }
+      const resp = await fetch("./data.json");
+      if (!resp.ok) throw new Error("Não foi possível carregar dashboard/data.json");
+      return resp.json();
+    }
+
+    function renderKPIs(data) {
+      const kpi = data.kpi_overview || {};
+      const dq = (data.data_quality_report && data.data_quality_report.summary) || {};
+      const cards = [
+        {
+          label: "Receita Líquida Total",
+          value: fmtBRL(kpi.receita_total),
+          sub: `${fmtNum(kpi.itens_vendidos)} itens vendidos`,
+          cls: "positive",
+        },
+        {
+          label: "Lucro Bruto",
+          value: fmtBRL(kpi.lucro_bruto),
+          sub: `Margem Bruta: ${fmtPct(kpi.margem_bruta_pct)}`,
+          cls: "positive",
+        },
+        {
+          label: "Ticket Médio",
+          value: fmtBRL(kpi.ticket_medio),
+          sub: `Desconto médio: ${fmtPct(kpi.desconto_medio_pct)}`,
+          cls: "",
+        },
+        {
+          label: "Pedidos Válidos",
+          value: fmtNum(kpi.total_pedidos),
+          sub: `${fmtNum(kpi.clientes_ativos)} clientes ativos`,
+          cls: "",
+        },
+        {
+          label: "Aproveitamento ETL",
+          value: fmtPct(dq.sales_acceptance_rate_pct),
+          sub: `${fmtNum(dq.rejected_sales_rows)} registros inválidos barrados`,
+          cls: "positive",
+        },
+        {
+          label: "Anomalias Corrigidas",
+          value: fmtNum(dq.total_issues_resolved),
+          sub: "Padronizações e deduplicações",
+          cls: "",
+        },
+      ];
+
+      document.getElementById("kpi-grid").innerHTML = cards
+        .map(
+          (c) => `
+          <div class="kpi-card">
+            <div class="kpi-label">${c.label}</div>
+            <div class="kpi-value">${c.value}</div>
+            <div class="kpi-sub ${c.cls}">${c.sub}</div>
+          </div>`
+        )
+        .join("");
+    }
+
+    function renderMonthlyChart(rows, yearFilter = "all") {
+      const filtered =
+        yearFilter === "all" ? rows : rows.filter((r) => String(r.ano) === String(yearFilter));
+
+      const labels = filtered.map((r) => r.ano_mes);
+      const revenues = filtered.map((r) => r.receita);
+      const mom = filtered.map((r) => r.crescimento_mom_pct);
+
+      const ctx = document.getElementById("monthlyChart").getContext("2d");
+      if (monthlyChartInstance) monthlyChartInstance.destroy();
+
+      monthlyChartInstance = new Chart(ctx, {
+        data: {
+          labels,
+          datasets: [
+            {
+              type: "bar",
+              label: "Receita Líquida (R$)",
+              data: revenues,
+              backgroundColor: "rgba(56, 189, 248, 0.72)",
+              borderColor: "#38bdf8",
+              borderWidth: 1,
+              borderRadius: 6,
+              yAxisID: "y",
+            },
+            {
+              type: "line",
+              label: "Crescimento MoM (%)",
+              data: mom,
+              borderColor: "#fbbf24",
+              backgroundColor: "rgba(251, 191, 36, 0.2)",
+              borderWidth: 2.5,
+              tension: 0.3,
+              pointRadius: 3.5,
+              yAxisID: "y1",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: { labels: { color: "#cbd5e1" } },
+            tooltip: {
+              callbacks: {
+                label: (ctx) =>
+                  ctx.dataset.yAxisID === "y"
+                    ? `${ctx.dataset.label}: ${fmtBRL(ctx.parsed.y)}`
+                    : `${ctx.dataset.label}: ${fmtPct(ctx.parsed.y)}`,
+              },
+            },
+          },
+          scales: {
+            x: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(148,163,184,0.08)" } },
+            y: {
+              position: "left",
+              ticks: { color: "#94a3b8", callback: (v) => `R$ ${(v / 1000).toFixed(0)}k` },
+              grid: { color: "rgba(148,163,184,0.1)" },
+            },
+            y1: {
+              position: "right",
+              ticks: { color: "#fbbf24", callback: (v) => `${v}%` },
+              grid: { drawOnChartArea: false },
+            },
+          },
+        },
+      });
+    }
+
+    function renderCategoryChart(rows) {
+      const ctx = document.getElementById("categoryChart").getContext("2d");
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: rows.map((r) => r.categoria),
+          datasets: [
+            {
+              label: "Receita Líquida",
+              data: rows.map((r) => r.receita),
+              backgroundColor: "rgba(129, 140, 248, 0.8)",
+              borderRadius: 6,
+            },
+            {
+              label: "Lucro Bruto",
+              data: rows.map((r) => r.lucro),
+              backgroundColor: "rgba(52, 211, 153, 0.8)",
+              borderRadius: 6,
+            },
+          ],
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { color: "#cbd5e1" } },
+            tooltip: { callbacks: { label: (c) => `${c.dataset.label}: ${fmtBRL(c.parsed.x)}` } },
+          },
+          scales: {
+            x: {
+              ticks: { color: "#94a3b8", callback: (v) => `R$ ${(v / 1000).toFixed(0)}k` },
+              grid: { color: "rgba(148,163,184,0.1)" },
+            },
+            y: { ticks: { color: "#e2e8f0" }, grid: { display: false } },
+          },
+        },
+      });
+    }
+
+    function renderRegionChart(rows) {
+      const ctx = document.getElementById("regionChart").getContext("2d");
+      const palette = ["#38bdf8", "#818cf8", "#34d399", "#fbbf24", "#fb7185"];
+      new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: rows.map((r) => r.regiao),
+          datasets: [
+            {
+              label: "Receita Líquida",
+              data: rows.map((r) => r.receita),
+              backgroundColor: rows.map((_, i) => palette[i % palette.length]),
+              borderRadius: 8,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (c) => {
+                  const row = rows[c.dataIndex];
+                  return `${fmtBRL(row.receita)} (${row.participacao_pct}% • ${row.pedidos} pedidos)`;
+                },
+              },
+            },
+          },
+          scales: {
+            x: { ticks: { color: "#e2e8f0" }, grid: { display: false } },
+            y: {
+              ticks: { color: "#94a3b8", callback: (v) => `R$ ${(v / 1000).toFixed(0)}k` },
+              grid: { color: "rgba(148,163,184,0.1)" },
+            },
+          },
+        },
+      });
+    }
+
+    function renderABCChart(rows, summary) {
+      const pillsEl = document.getElementById("abc-pills");
+      const clsColors = { A: "tag-a", B: "tag-b", C: "tag-c" };
+      pillsEl.innerHTML = ["A", "B", "C"]
+        .map((cls) => {
+          const s = (summary && summary[cls]) || { produtos: 0, receita: 0, participacao_pct: 0 };
+          return `
+            <div class="abc-pill">
+              <span class="tag ${clsColors[cls]}">Classe ${cls}</span>
+              <strong style="margin-left: 8px;">${fmtBRL(s.receita)}</strong>
+              <span>${s.produtos} produtos • ${s.participacao_pct.toFixed(1)}% da receita</span>
+            </div>`;
+        })
+        .join("");
+
+      const top15 = rows.slice(0, 15);
+      const ctx = document.getElementById("abcChart").getContext("2d");
+      new Chart(ctx, {
+        data: {
+          labels: top15.map((r) =>
+            r.nome_produto.length > 26 ? r.nome_produto.slice(0, 26) + "…" : r.nome_produto
+          ),
+          datasets: [
+            {
+              type: "bar",
+              label: "Receita Produto (R$)",
+              data: top15.map((r) => r.receita),
+              backgroundColor: top15.map((r) =>
+                r.classe_abc === "A"
+                  ? "rgba(52, 211, 153, 0.78)"
+                  : r.classe_abc === "B"
+                  ? "rgba(251, 191, 36, 0.78)"
+                  : "rgba(251, 113, 133, 0.78)"
+              ),
+              borderRadius: 6,
+              yAxisID: "y",
+            },
+            {
+              type: "line",
+              label: "Acumulado Pareto (%)",
+              data: top15.map((r) => r.acumulado_pct),
+              borderColor: "#38bdf8",
+              borderWidth: 2.5,
+              tension: 0.25,
+              pointRadius: 3.5,
+              yAxisID: "y1",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          interaction: { mode: "index", intersect: false },
+          plugins: {
+            legend: { labels: { color: "#cbd5e1" } },
+            tooltip: {
+              callbacks: {
+                label: (c) =>
+                  c.dataset.yAxisID === "y"
+                    ? `${c.dataset.label}: ${fmtBRL(c.parsed.y)}`
+                    : `${c.dataset.label}: ${c.parsed.y}%`,
+              },
+            },
+          },
+          scales: {
+            x: { ticks: { color: "#94a3b8", maxRotation: 35, minRotation: 20 }, grid: { display: false } },
+            y: {
+              position: "left",
+              ticks: { color: "#94a3b8", callback: (v) => `R$ ${(v / 1000).toFixed(0)}k` },
+              grid: { color: "rgba(148,163,184,0.1)" },
+            },
+            y1: {
+              position: "right",
+              min: 0,
+              max: 100,
+              ticks: { color: "#38bdf8", callback: (v) => `${v}%` },
+              grid: { drawOnChartArea: false },
+            },
+          },
+        },
+      });
+    }
+
+    function renderRFMChart(rows) {
+      const ctx = document.getElementById("rfmChart").getContext("2d");
+      new Chart(ctx, {
+        type: "doughnut",
+        data: {
+          labels: rows.map((r) => `${r.segmento_rfm} (${r.total_clientes})`),
+          datasets: [
+            {
+              data: rows.map((r) => r.receita_total),
+              backgroundColor: ["#34d399", "#38bdf8", "#818cf8", "#fbbf24", "#fb7185"],
+              borderColor: "#111827",
+              borderWidth: 3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { position: "right", labels: { color: "#e2e8f0", padding: 14 } },
+            tooltip: {
+              callbacks: {
+                label: (c) => {
+                  const row = rows[c.dataIndex];
+                  return `${row.segmento_rfm}: ${fmtBRL(row.receita_total)} (CLV médio: ${fmtBRL(row.ticket_clv_medio)})`;
+                },
+              },
+            },
+          },
+        },
+      });
+    }
+
+    function renderTopCustomers(rows) {
+      const tbody = document.querySelector("#top-customers-table tbody");
+      tbody.innerHTML = rows
+        .map(
+          (r) => `
+          <tr>
+            <td><strong>#${r.ranking}</strong></td>
+            <td>${r.nome}</td>
+            <td>${r.estado}</td>
+            <td><span class="tag tag-a">${r.segmento}</span></td>
+            <td class="num">${fmtNum(r.total_pedidos)}</td>
+            <td class="num"><strong>${fmtBRL(r.receita_total)}</strong></td>
+          </tr>`
+        )
+        .join("");
+    }
+
+    function renderDataQuality(dq) {
+      if (!dq || !dq.summary) return;
+      document.getElementById("dq-acceptance-badge").textContent =
+        `Aproveitamento Vendas: ${fmtPct(dq.summary.sales_acceptance_rate_pct)}`;
+
+      const tableBody = document.querySelector("#dq-tables tbody");
+      const counts = dq.table_counts || {};
+      const mapping = [
+        ["dim_clientes", counts.clientes],
+        ["dim_produtos", counts.produtos],
+        ["dim_lojas", counts.lojas],
+        ["dim_tempo", counts.tempo],
+        ["fato_vendas", counts.vendas],
+      ];
+      tableBody.innerHTML = mapping
+        .map(([name, c]) => {
+          if (!c) return "";
+          const diff = c.raw > 0 ? c.raw - c.clean : 0;
+          return `
+            <tr>
+              <td><code>${name}</code></td>
+              <td class="num">${c.raw > 0 ? fmtNum(c.raw) : "Gerada"}</td>
+              <td class="num"><strong>${fmtNum(c.clean)}</strong></td>
+              <td class="num">${diff > 0 ? `-${fmtNum(diff)}` : "0"}</td>
+            </tr>`;
+        })
+        .join("");
+
+      const issues = dq.issues_resolved_breakdown || {};
+      document.getElementById("dq-issues-grid").innerHTML = Object.entries(issues)
+        .map(
+          ([key, val]) => `
+          <div class="dq-item">
+            <span class="label">${ISSUE_LABELS[key] || key}</span>
+            <span class="val">${fmtNum(val)}</span>
+          </div>`
+        )
+        .join("");
+    }
+
+    (async () => {
+      try {
+        const data = await loadDashboardData();
+        if (data.metadata) {
+          document.getElementById("meta-warehouse").textContent = `DW: ${data.metadata.warehouse}`;
+          const dt = new Date(data.metadata.generated_at_utc);
+          document.getElementById("meta-updated").textContent =
+            `ETL: ${dt.toLocaleString("pt-BR")}`;
+        }
+
+        renderKPIs(data);
+        renderMonthlyChart(data.monthly_revenue_growth || [], "all");
+        renderCategoryChart(data.category_performance || []);
+        renderRegionChart(data.regional_performance || []);
+        renderABCChart(data.abc_curve_products || [], data.abc_summary || {});
+        renderRFMChart(data.rfm_segmentation || []);
+        renderTopCustomers(data.top_customers || []);
+        renderDataQuality(data.data_quality_report || {});
+
+        document.querySelectorAll("#year-filters .filter-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            document.querySelectorAll("#year-filters .filter-btn").forEach((b) => b.classList.remove("active"));
+            btn.classList.add("active");
+            renderMonthlyChart(data.monthly_revenue_growth || [], btn.dataset.year);
+          });
+        });
+      } catch (err) {
+        const banner = document.getElementById("error-banner");
+        banner.style.display = "block";
+        banner.textContent = `Erro ao carregar dados do dashboard: ${err.message}. Execute "python main.py" para gerar os dados.`;
+      }
+    })();
+  </script>
+</body>
+</html>

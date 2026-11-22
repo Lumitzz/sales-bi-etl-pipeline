@@ -1,0 +1,209 @@
+cliente_id,nome,email,cidade,estado,segmento,data_cadastro
+CLI-0069,Matheus Almeida,matheus.almeida69@email.com,Campinas,sp,Varejo,2023-08-19
+CLI-0006,Olívia Gomes,olívia.gomes6@email.com,Manaus,AM,Varejo,2023-01-09
+CLI-0158,caio rodrigues,caio.rodrigues158@email.com,Vitória,es,Corporativo,05/04/2023
+CLI-0116,nathan vieira,nathan.vieira116@email.com,Manaus,AM,PME,2022-01-03
+CLI-0115,Nathan Rocha,nathan.rocha115@email.com,São Paulo,SP,Varejo,2023-08-02
+CLI-0155,Diego Rocha,diego.rocha155@email.com,Curitiba,PR,Varejo,27-03-2022
+CLI-0134,  TATIANA COSTA  ,tatiana.costa134@email.com,Porto Alegre,Rio Grande do Sul,Varejo,24/08/2022
+CLI-0092,Matheus Rodrigues,matheus.rodrigues92@email.com,Porto Alegre,rs,Varejo,2022/11/26
+CLI-0146,Diego Rocha,diego.rocha146@email.com, CAMPINAS ,sp,Varejo, 04/11/2023 
+CLI-0180,Eduarda Rodrigues,eduarda.rodrigues180@email.com,Fortaleza,CE,Varejo,19/07/2023
+CLI-0161,Bruno Rocha,,Belo Horizonte,mg,Varejo,2023-08-08
+CLI-0056,olívia lopes,olívia.lopes56@email.com, FLORIANÓPOLIS ,sc,Corporativo,19-02-2023
+CLI-0086,Ana Dias,ana.dias86@email.com, PORTO ALEGRE ,rs,Corporativo,26/05/2023
+CLI-0067,  FERNANDA COSTA  ,fernanda.costa67@email.com,Manaus,am,VIP,2022-12-15
+CLI-0087,Diego Alves,diego.alves87@email.com,Rio de Janeiro,Rio de Janeiro,Varejo,08/10/2023
+CLI-0076,Olívia Soares,olívia.soares76@email.com,Belém,para,Varejo,06/08/2023
+CLI-0040,Mariana Martins,mariana.martins40@email.com,Manaus,AM,Corporativo,14/02/2023
+CLI-0057,Leonardo Rodrigues,leonardo.rodrigues57@email.com,Salvador,BA,Corporativo,27/03/2022
+CLI-0081,Vinícius Nascimento,vinícius.nascimento81@email.com,Vitória,Espírito Santo,Corporativo,19-03-2023
+CLI-0003,Helena Pereira,helena.pereira3@email.com,Vitória,ES,Varejo,2022-10-12
+CLI-0193,Juliana Fernandes,juliana.fernandes193@email.com,Recife,Pernambuco,Varejo,18-01-2023
+CLI-0027,Larissa Soares,larissa.soares27@email.com, SALVADOR ,ba,PME,12/03/2022
+CLI-0142,Vinícius Almeida,,São Paulo,São Paulo,PME,03/04/2022
+CLI-0007,Daniela Alves,daniela.alves7@email.com,Brasília,Distrito Federal,Varejo,2022-09-08
+CLI-0061,Nathan Almeida,nathan.almeida61@email.com,Goiânia,Goiás,VIP,28-04-2022
+CLI-0029,beatriz lima,beatriz.lima29@email.com,Brasília,df,Corporativo,04/11/2022
+CLI-0187,Beatriz Nascimento,beatriz.nascimento187@email.com,Manaus,am,Varejo,2023-07-30
+CLI-0140,Matheus Almeida,matheus.almeida140@email.com,Goiânia,goias,Corporativo,2023-10-02
+CLI-0184,  CAIO VIEIRA  ,caio.vieira184@email.com, MANAUS ,AM,VIP,29/09/2022
+CLI-0189,Kamila Costa,kamila.costa189@email.com,Brasília,df,PME,24/04/2023
+CLI-0128,Bruno Barbosa,bruno.barbosa128@email.com,Manaus,Amazonas,Corporativo, 13/11/2022 
+CLI-0110,  OLÍVIA LOPES  ,olívia.lopes110@email.com,Belém,Pará,Varejo,2023/04/21
+CLI-0100,matheus vieira,matheus.vieira100@email.com,Porto Alegre,Rio Grande do Sul,Varejo,2023/04/22
+CLI-0130,Nathan Martins,nathan.martins130@email.com,Curitiba,pr,VIP,05/08/2023
+CLI-0185,Helena Barbosa,helena.barbosa185@email.com,Porto Alegre,Rio Grande do Sul,Varejo,08-09-2022
+CLI-0009,Beatriz Martins,beatriz.martins9@email.com,Belo Horizonte,Minas Gerais,PME,21/10/2023
+CLI-0091,Helena Costa,helena.costa91@email.com,Salvador,Bahia,Varejo,25/08/2023
+CLI-0094,João Lopes,joão.lopes94@email.com,Rio de Janeiro,Rio de Janeiro,Varejo,2023/06/23
+CLI-0053,Caio Costa,caio.costa53@email.com,Campinas,SP,Varejo,2022-08-08
+CLI-0019,Bruno Vieira,bruno.vieira19@email.com, RECIFE ,PE,Varejo,2022/03/11
+CLI-0048,  MARIANA RODRIGUES  ,mariana.rodrigues48@email.com,Belo Horizonte,minas gerais,Varejo,07/10/2023
+CLI-0046,Beatriz Almeida,beatriz.almeida46@email.com,Fortaleza,ce,PME,23/06/2022
+CLI-0170,Tatiana Gomes,tatiana.gomes170@email.com,Brasília,df,Varejo,28/12/2022
+CLI-0145,Juliana Almeida,juliana.almeida145@email.com,Recife,PE,Varejo,13/12/2022
+CLI-0173,carla barbosa,carla.barbosa173@email.com,Porto Alegre,rs,Corporativo,2023-06-27
+CLI-0097,  CARLA BARBOSA  ,carla.barbosa97@email.com,Fortaleza,Ceará,Varejo,11-04-2022
+CLI-0030,Eduarda Silva,eduarda.silva30@email.com, RECIFE ,PE,Varejo,2022/12/24
+CLI-0008,Fernanda Lima,fernanda.lima8@email.com,Fortaleza,ce,VIP,2022/08/23
+CLI-0093,Pedro Vieira,pedro.vieira93@email.com, MANAUS ,am,Corporativo,2023-01-26
+CLI-0004,  CAIO SOUZA  ,caio.souza4@email.com,Campinas,sp,VIP,16/04/2023
+CLI-0133,Vinícius Santos,vinícius.santos133@email.com, RECIFE ,PE,Varejo,21-05-2022
+CLI-0129,daniela silva,daniela.silva129@email.com, RIO DE JANEIRO ,  rj ,PME,04-04-2022
+CLI-0084,Larissa Ribeiro,larissa.ribeiro84@email.com,Curitiba,PR,Corporativo,23/10/2022
+CLI-0192,Enzo Martins,enzo.martins192@email.com,Florianópolis,SC,Corporativo,2022-03-17
+CLI-0017,Isabela Dias,isabela.dias17@email.com,Salvador,ba,Varejo, 05/08/2022 
+CLI-0119,Enzo Soares,enzo.soares119@email.com,Porto Alegre,Rio Grande do Sul,Corporativo,06/11/2023
+CLI-0179,Isabela Barbosa,isabela.barbosa179@email.com,Campinas,sp,Varejo,25-02-2023
+CLI-0047,Tatiana Soares,tatiana.soares47@email.com, RECIFE ,pe,Varejo,2022-11-14
+CLI-0191,Matheus Barbosa,,Fortaleza,ceara,Varejo,2022/05/18
+CLI-0020,Caio Oliveira,caio.oliveira20@email.com,Vitória,Espírito Santo,Corporativo,08/08/2023
+CLI-0022,Diego Dias,diego.dias22@email.com, FORTALEZA ,CE,VIP,2022-04-22
+CLI-0200,diego nascimento,diego.nascimento200@email.com,Belo Horizonte,Minas Gerais,Varejo,27/06/2022
+CLI-0049,Fernanda Lopes,fernanda.lopes49@email.com,Rio de Janeiro,RJ,PME,2023-03-12
+CLI-0152,Kamila Mendes,kamila.mendes152@email.com,Florianópolis,sc,Varejo,19-10-2022
+CLI-0031,Pedro Ribeiro,pedro.ribeiro31@email.com,Porto Alegre,Rio Grande do Sul,PME,01/11/2023
+CLI-0088,pedro nascimento,pedro.nascimento88@email.com,Salvador,BA,PME,27/04/2022
+CLI-0034,  IGOR LIMA  ,igor.lima34@email.com,Curitiba,pr,VIP,19-07-2023
+CLI-0001,Henrique Silva,henrique.silva1@email.com,Belo Horizonte,mg,VIP,2023-07-13
+CLI-0182,Olívia Ribeiro,olívia.ribeiro182@email.com,Salvador,Bahia,Corporativo,2023-07-19
+CLI-0196,Vinícius Vieira,vinícius.vieira196@email.com,Manaus,Amazonas,Varejo,2022-01-18
+CLI-0156,Samuel Almeida,samuel.almeida156@email.com, RIO DE JANEIRO ,  rj ,VIP, 24/12/2022 
+CLI-0099,Pedro Soares,,Fortaleza,ce,PME,27/09/2023
+CLI-0088,pedro nascimento,pedro.nascimento88@email.com,Salvador,BA,PME,27/04/2022
+CLI-0154,Leonardo Gomes,leonardo.gomes154@email.com,Salvador,  bahia ,VIP,2022/05/22
+CLI-0080,eduarda santos,eduarda.santos80@email.com,Vitória,Espírito Santo,Varejo,08/05/2022
+CLI-0012,Eduarda Martins,eduarda.martins12@email.com,Porto Alegre,Rio Grande do Sul,PME,28-11-2023
+CLI-0042,Beatriz Carvalho,beatriz.carvalho42@email.com,Salvador,BA,Varejo,2023-03-23
+CLI-0167,Mariana Gomes,mariana.gomes167@email.com,Goiânia,GO,Varejo,2023-01-12
+CLI-0175,Rafaela Nascimento,rafaela.nascimento175@email.com,Recife,pe,Varejo,2022/05/19
+CLI-0137,Enzo Oliveira,enzo.oliveira137@email.com,Campinas,SP,Varejo,14-11-2022
+CLI-0079,Olívia Lima,olívia.lima79@email.com,Fortaleza,ce,Corporativo,2022/09/30
+CLI-0125,Enzo Rodrigues,enzo.rodrigues125@email.com,Recife,Pernambuco,Varejo, 13/11/2023 
+CLI-0095,ana mendes,,Manaus,Amazonas,VIP,2022-09-29
+CLI-0109,Henrique Almeida,henrique.almeida109@email.com,Brasília,Distrito Federal,Corporativo,2023-01-16
+CLI-0169,Felipe Mendes,felipe.mendes169@email.com,Florianópolis,Santa Catarina,Varejo,2022-04-16
+CLI-0044,Helena Costa,helena.costa44@email.com,Vitória,Espírito Santo,PME,25-11-2023
+CLI-0111,Vinícius Rocha,vinícius.rocha111@email.com,Rio de Janeiro,RJ,Varejo,2022-04-10
+CLI-0117,João Rodrigues,joão.rodrigues117@email.com,Goiânia,go,Varejo,02-01-2023
+CLI-0033,Nathan Nascimento,nathan.nascimento33@email.com,Fortaleza,Ceará,PME,2022-02-22
+CLI-0103,  GUSTAVO LIMA  ,gustavo.lima103@email.com,Manaus,Amazonas,PME,2023/05/24
+CLI-0104,Tatiana Pereira,tatiana.pereira104@email.com,Curitiba,pr,Corporativo,07/11/2023
+CLI-0171,Igor Lima,igor.lima171@email.com, GOIÂNIA ,GO,Varejo,2023-11-27
+CLI-0148,Felipe Gomes,felipe.gomes148@email.com,Fortaleza,Ceará,VIP,2023/12/03
+CLI-0015,Kamila Fernandes,kamila.fernandes15@email.com,Belém,PA,Varejo,2023/01/07
+CLI-0025,Larissa Alves,,Belém,PA,Varejo,2023-04-11
+CLI-0035,  ANA SOUZA  ,ana.souza35@email.com,Belém,pa,Corporativo,2022-06-01
+CLI-0131,diego rodrigues,diego.rodrigues131@email.com,Recife,PE,Corporativo,13/05/2023
+CLI-0065,leonardo nascimento,leonardo.nascimento65@email.com,Rio de Janeiro,Rio de Janeiro,VIP,2023-04-22
+CLI-0018,Mariana Nascimento,mariana.nascimento18@email.com,Fortaleza,Ceará,Varejo,2022-08-19
+CLI-0163,Larissa Santos,larissa.santos163@email.com,Curitiba,Paraná,Varejo,04-09-2022
+CLI-0174,Beatriz Rocha,beatriz.rocha174@email.com,Campinas,SP,Varejo,2023-07-30
+CLI-0160,pedro gomes,pedro.gomes160@email.com,Belo Horizonte,minas gerais,Varejo,27/05/2023
+CLI-0135,Daniela Oliveira,daniela.oliveira135@email.com,Brasília,DF,Varejo,17/11/2022
+CLI-0059,Helena Lima,,Porto Alegre,RS,PME,18/08/2022
+CLI-0037,Helena Barbosa,helena.barbosa37@email.com,Belém,pa,VIP,2023-02-27
+CLI-0043,Mariana Ribeiro,mariana.ribeiro43@email.com,Fortaleza,Ceará,Varejo,04/11/2022
+CLI-0150,Matheus Alves,matheus.alves150@email.com, RIO DE JANEIRO ,rj,Varejo,2023/07/07
+CLI-0078,Juliana Nascimento,juliana.nascimento78@email.com,Vitória,ES,Corporativo,2023-04-10
+CLI-0073,Diego Fernandes,,Rio de Janeiro,  rj ,Varejo,2023-05-06
+CLI-0039,Carla Lopes,carla.lopes39@email.com,Manaus,am,PME,2022-08-17
+CLI-0199,Bruno Almeida,bruno.almeida199@email.com,Rio de Janeiro,  rj ,VIP,2023/04/28
+CLI-0139,  JOÃO PEREIRA  ,joão.pereira139@email.com,Vitória,ES,VIP,2022-03-19
+CLI-0127,Olívia Souza,olívia.souza127@email.com,Salvador,Bahia,Varejo,2023/03/16
+CLI-0175,Rafaela Nascimento,rafaela.nascimento175@email.com,Recife,pe,Varejo,2022/05/19
+CLI-0112,Isabela Martins,isabela.martins112@email.com,Fortaleza,ceara,PME,2023-11-02
+CLI-0096,  GUSTAVO ROCHA  ,gustavo.rocha96@email.com,Curitiba,parana,PME,2023/05/15
+CLI-0024,Gabriela Santos,gabriela.santos24@email.com,Salvador,BA,VIP,2022-06-20
+CLI-0137,Enzo Oliveira,enzo.oliveira137@email.com,Campinas,SP,Varejo,14-11-2022
+CLI-0101,Kamila Oliveira,kamila.oliveira101@email.com,Curitiba,Paraná,Varejo,2022-11-06
+CLI-0051,Juliana Barbosa,juliana.barbosa51@email.com,Belém,para,PME,02/05/2023
+CLI-0190,  VINÍCIUS LOPES  ,vinícius.lopes190@email.com,Florianópolis,Santa Catarina,Corporativo,2022-02-19
+CLI-0005,Fernanda Oliveira,fernanda.oliveira5@email.com,Manaus,Amazonas,Corporativo,2022-03-13
+CLI-0118,Pedro Vieira,pedro.vieira118@email.com, RIO DE JANEIRO ,Rio de Janeiro,Varejo,07/03/2022
+CLI-0120,Leonardo Rocha,leonardo.rocha120@email.com,São Paulo,sao paulo,Varejo,2023-03-31
+CLI-0132,helena lima,helena.lima132@email.com,Salvador,BA,Corporativo,31/08/2023
+CLI-0108,Eduarda Rodrigues,eduarda.rodrigues108@email.com,Belo Horizonte,minas gerais,Varejo,2023-02-09
+CLI-0113,Matheus Barbosa,matheus.barbosa113@email.com,Vitória,ES,Varejo,2022/08/30
+CLI-0107,Samuel Ferreira,samuel.ferreira107@email.com,Manaus,am,PME,28/04/2022
+CLI-0045,Lucas Barbosa,lucas.barbosa45@email.com,Florianópolis,Santa Catarina,Varejo,17/08/2023
+CLI-0010,Rafaela Rodrigues,rafaela.rodrigues10@email.com,Salvador,Bahia,Corporativo,2023-01-06
+CLI-0091,Helena Costa,helena.costa91@email.com,Salvador,Bahia,Varejo,25/08/2023
+CLI-0023,Mariana Fernandes,mariana.fernandes23@email.com,Florianópolis,SC,PME,30-03-2023
+CLI-0016,  VINÍCIUS PEREIRA  ,vinícius.pereira16@email.com, BELÉM ,PA,Varejo,30-06-2023
+CLI-0153,Juliana Pereira,juliana.pereira153@email.com,Vitória,es,Corporativo, 08/08/2023 
+CLI-0083,Lucas Lopes,lucas.lopes83@email.com,Porto Alegre,rs,Corporativo, 19/05/2023 
+CLI-0172,Bruno Rodrigues,, FORTALEZA ,ceara,VIP,2023-01-11
+CLI-0164,Gabriela Vieira,gabriela.vieira164@email.com, CURITIBA ,pr,VIP,2022/06/29
+CLI-0166,Mariana Santos,mariana.santos166@email.com,Vitória,Espírito Santo,Varejo,07-02-2022
+CLI-0122,Tatiana Almeida,tatiana.almeida122@email.com,Florianópolis,SC,Corporativo,19-07-2023
+CLI-0105,  ISABELA ROCHA  ,isabela.rocha105@email.com,Fortaleza,CE,Corporativo,2022-05-15
+CLI-0041,  CAIO SILVA  ,caio.silva41@email.com,Vitória,ES,Varejo,2023-09-03
+CLI-0141,Beatriz Rodrigues,beatriz.rodrigues141@email.com,Porto Alegre,rs,Corporativo,27/12/2022
+CLI-0002,  IGOR SANTOS  ,,Belo Horizonte,mg,Varejo,28-10-2023
+CLI-0159,Felipe Silva,felipe.silva159@email.com,Manaus,AM,Varejo,24-04-2022
+CLI-0149,Felipe Rocha,felipe.rocha149@email.com, SALVADOR ,Bahia,PME, 16/12/2022 
+CLI-0121,Felipe Costa,felipe.costa121@email.com,Campinas,SP,Varejo,2022-11-29
+CLI-0085,  GUSTAVO FERNANDES  ,gustavo.fernandes85@email.com,Campinas,sp,VIP,2023/06/11
+CLI-0106,Tatiana Costa,tatiana.costa106@email.com,Rio de Janeiro,rj,PME,28/06/2023
+CLI-0026,matheus rodrigues,matheus.rodrigues26@email.com,Belo Horizonte,MG,VIP,2022-02-28
+CLI-0014,Lucas Soares,lucas.soares14@email.com,Manaus,Amazonas,Corporativo,2022-06-06
+CLI-0060,Carla Silva,carla.silva60@email.com,Belo Horizonte,MG,Varejo,28/04/2022
+CLI-0197,Henrique Carvalho,henrique.carvalho197@email.com,Goiânia,GO,Corporativo,16/08/2023
+CLI-0136,Gustavo Nascimento,gustavo.nascimento136@email.com,Vitória,ES,Varejo,25/09/2023
+CLI-0013,Samuel Rocha,,Vitória,es,Corporativo, 27/09/2022 
+CLI-0063,Pedro Souza,pedro.souza63@email.com,Vitória,Espírito Santo,PME,2022-02-12
+CLI-0062,  KAMILA GOMES  ,kamila.gomes62@email.com,São Paulo,São Paulo,Varejo,2022-07-23
+CLI-0151,Carla Dias,carla.dias151@email.com,Goiânia,go,Varejo,11-12-2023
+CLI-0028,  PEDRO MARTINS  ,,Belém,pa,Varejo,05/11/2023
+CLI-0036,Carla Gomes,carla.gomes36@email.com,Belém,PA,Varejo,2022-04-16
+CLI-0162,Felipe Soares,felipe.soares162@email.com,Campinas,São Paulo,Varejo,2022-01-21
+CLI-0186,Gustavo Gomes,gustavo.gomes186@email.com,Brasília,DF,Varejo,15/12/2022
+CLI-0070,Daniela Carvalho,daniela.carvalho70@email.com,Salvador,Bahia,Varejo,2022-08-25
+CLI-0138,Olívia Costa,olívia.costa138@email.com,Campinas,São Paulo,Varejo,2022-12-24
+CLI-0052,Pedro Rocha,pedro.rocha52@email.com,Goiânia,goias,Varejo,2022-10-20
+CLI-0055,Bruno Vieira,bruno.vieira55@email.com,São Paulo,São Paulo,PME,06/03/2023
+CLI-0188,pedro almeida,,Porto Alegre,RS,PME,2023-09-23
+CLI-0066,Samuel Costa,samuel.costa66@email.com,Manaus,AM,VIP,07/08/2023
+CLI-0168,Gustavo Mendes,gustavo.mendes168@email.com,Florianópolis,sc,Varejo,2023-06-16
+CLI-0114,Gabriela Dias,gabriela.dias114@email.com, BELÉM ,Pará,PME,2023-04-11
+CLI-0176,Juliana Ferreira,juliana.ferreira176@email.com,Porto Alegre,RS,PME,2023-11-15
+CLI-0021,Pedro Lopes,pedro.lopes21@email.com, BELO HORIZONTE ,MG,Varejo,2023/04/24
+CLI-0183,Vinícius Barbosa,vinícius.barbosa183@email.com,Salvador,ba,Varejo,02-10-2023
+CLI-0011,Isabela Soares,isabela.soares11@email.com,Goiânia,GO,Varejo,2023-11-28
+CLI-0075,diego rodrigues,diego.rodrigues75@email.com, RECIFE ,pe,Corporativo,03/03/2023
+CLI-0038,Caio Carvalho,caio.carvalho38@email.com,Manaus,Amazonas,VIP,2022-04-21
+CLI-0089,Henrique Rocha,henrique.rocha89@email.com,Porto Alegre,Rio Grande do Sul,Varejo, 10/05/2023 
+CLI-0102,  FERNANDA LOPES  ,fernanda.lopes102@email.com,Florianópolis,Santa Catarina,Corporativo, 23/01/2022 
+CLI-0098,gabriela almeida,gabriela.almeida98@email.com, VITÓRIA ,ES,Varejo,2023-01-19
+CLI-0140,Matheus Almeida,matheus.almeida140@email.com,Goiânia,goias,Corporativo,2023-10-02
+CLI-0174,Beatriz Rocha,beatriz.rocha174@email.com,Campinas,SP,Varejo,2023-07-30
+CLI-0147,  JOÃO COSTA  ,joão.costa147@email.com,Fortaleza,ce,Corporativo,2023-11-10
+CLI-0032,  VINÍCIUS DIAS  ,vinícius.dias32@email.com,Belém,pa,VIP,2022-06-09
+CLI-0195,Caio Lopes,caio.lopes195@email.com,Rio de Janeiro,rj,Varejo,24-09-2023
+CLI-0071,  MARIANA COSTA  ,mariana.costa71@email.com,Salvador,ba,Varejo, 27/08/2023 
+CLI-0185,Helena Barbosa,helena.barbosa185@email.com,Porto Alegre,Rio Grande do Sul,Varejo,08-09-2022
+CLI-0144,João Santos,joão.santos144@email.com,Goiânia,Goiás,Corporativo,2022-02-10
+CLI-0090,Pedro Almeida,pedro.almeida90@email.com,Florianópolis,SC,PME,2022-03-13
+CLI-0123,Nathan Carvalho,nathan.carvalho123@email.com,Belo Horizonte,minas gerais,Varejo,2022-04-08
+CLI-0082,  RAFAELA SILVA  ,rafaela.silva82@email.com,Fortaleza,CE,Varejo,11-02-2022
+CLI-0126,  IGOR MENDES  ,igor.mendes126@email.com,Vitória,Espírito Santo,Varejo,08/06/2022
+CLI-0194,Caio Fernandes,caio.fernandes194@email.com,Goiânia,go,Varejo,2022-02-16
+CLI-0177,Eduarda Fernandes,eduarda.fernandes177@email.com,Belém,Pará,PME,2023-10-16
+CLI-0054,Helena Costa,helena.costa54@email.com,Florianópolis,SC,PME, 22/08/2023 
+CLI-0181,Lucas Rodrigues,lucas.rodrigues181@email.com,Belém,PA,Varejo,2022-06-15
+CLI-0074,Lucas Santos,,Manaus,am,Varejo,14/08/2023
+CLI-0198,Diego Vieira,diego.vieira198@email.com,Salvador,  bahia ,Varejo,2023-12-19
+CLI-0058,isabela almeida,isabela.almeida58@email.com,Vitória,es,Varejo,2023-01-24
+CLI-0077,Gabriela Alves,gabriela.alves77@email.com, VITÓRIA ,Espírito Santo,Corporativo,2022-06-10
+CLI-0143,Fernanda Almeida,fernanda.almeida143@email.com,Goiânia,GO,Corporativo,26/11/2022
+CLI-0072,Tatiana Souza,tatiana.souza72@email.com,Vitória,ES,Corporativo,2022-05-10
+CLI-0064,Igor Dias,igor.dias64@email.com, SALVADOR ,Bahia,Varejo, 20/03/2023 
+CLI-0050,Leonardo Santos,leonardo.santos50@email.com,Belém,PA,Corporativo,27/07/2023
+CLI-0124,Beatriz Dias,beatriz.dias124@email.com, RIO DE JANEIRO ,  rj ,Varejo,09-04-2022
+CLI-0157,Helena Santos,helena.santos157@email.com,Curitiba,pr,Varejo, 23/11/2022 
+CLI-0068,  SAMUEL FERNANDES  ,samuel.fernandes68@email.com,Belo Horizonte,MG,Corporativo,04/09/2022
+CLI-0178,Enzo Soares,enzo.soares178@email.com,Belo Horizonte,mg,Varejo,2023-08-10
+CLI-0198,Diego Vieira,diego.vieira198@email.com,Salvador,  bahia ,Varejo,2023-12-19
+CLI-0165,Leonardo Nascimento,leonardo.nascimento165@email.com, RIO DE JANEIRO ,rj,Varejo,2022-10-28
